@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YSG – One Partner. Every Channel.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #F47920;
+    --navy: #1A2744;
+    --dark: #111827;
+    --mid: #6B7280;
+    --light: #F9FAFB;
+    --white: #ffffff;
+    --border: #E5E7EB;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+    background: rgba(26,39,68,0.92); backdrop-filter: blur(10px);
+    transition: background 0.3s;
+  }
+  nav .logo img { height: 36px; }
+  nav .nav-links { display: flex; align-items: center; gap: 32px; }
+  nav .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  nav .nav-links a:hover { color: var(--white); }
+  nav .nav-cta {
+    background: var(--orange); color: var(--white); padding: 10px 22px;
+    border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: background 0.2s;
+  }
+  nav .nav-cta:hover { background: #d96a10; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; height: 100vh; min-height: 600px;
+    display: flex; align-items: flex-end; padding-bottom: 80px; padding-left: 64px;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: #1A2744 url('images/hero-bg.png') center center / cover no-repeat;
+  }
+  .hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(10,20,40,0.72) 40%, rgba(10,20,40,0.1) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 600px; }
+  .hero-content h1 { font-size: clamp(40px, 5vw, 64px); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+  .hero-content p { font-size: 17px; color: rgba(255,255,255,0.8); margin-bottom: 32px; line-height: 1.6; }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--orange); color: var(--white); padding: 14px 28px;
+    border-radius: 6px; font-size: 15px; font-weight: 600; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .hero-cta:hover { background: #d96a10; }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 80px 64px; }
+  .section-label { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+  .section-title { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--navy); line-height: 1.2; }
+  .section-title span { color: var(--orange); }
+  .section-sub { font-size: 16px; color: var(--mid); margin-top: 14px; line-height: 1.7; max-width: 520px; }
+
+  /* ── VALUE PROPS ── */
+  .value-props { background: var(--white); }
+  .value-props-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; max-width: 1200px; margin: 0 auto; }
+  .value-left { }
+  .value-awards { display: flex; align-items: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+  .value-awards img { height: 60px; object-fit: contain; }
+  .value-right { display: flex; flex-direction: column; gap: 32px; padding-top: 8px; }
+  .value-card { display: flex; flex-direction: row; align-items: flex-start; gap: 16px; }
+  .value-card img { width: 52px; height: 52px; object-fit: contain; flex-shrink: 0; margin-top: 2px; }
+  .value-card h4 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .value-card p { font-size: 15px; color: var(--mid); line-height: 1.65; }
+
+  /* ── PARTNER MARQUEE ── */
+  .marquee-bar { background: var(--white); padding: 40px 64px; overflow: hidden; }
+  
+  .marquee-logos-box { background: var(--light); border-radius: 16px; padding: 32px 48px 24px; overflow: hidden; max-width: 90%; margin: 0 auto; }
+  .marquee-track { display: flex; gap: 56px; animation: marquee 28s linear infinite; width: max-content; align-items: center; }
+  .marquee-track img { height: 42px; object-fit: contain; filter: grayscale(30%); transition: filter 0.2s; }
+  .marquee-track img:hover { filter: grayscale(0%); }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ── CAPABILITIES ── */
+  .capabilities { background: var(--white); }
+  .capabilities-inner { max-width: 1200px; margin: 0 auto; }
+  .capabilities-header { margin-bottom: 48px; }
+  .capabilities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .cap-card { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
+  .cap-card img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s; }
+  .cap-card:hover img { transform: scale(1.04); }
+  .cap-card .cap-info { padding: 20px 0 8px; }
+  .cap-card .cap-info h3 { font-size: 18px; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 6px; }
+  .cap-card .cap-info h3::after { content: '→'; color: var(--orange); font-size: 16px; }
+  .cap-card .cap-info p { font-size: 14px; color: var(--mid); margin-top: 6px; line-height: 1.6; }
+
+  /* ── STATS ── */
+  .stats { background: var(--navy); padding: 72px 64px; }
+  .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .stat-card { background: var(--navy); padding: 48px 40px; position: relative; text-align: left; border-radius: 0; }
+  .stat-card:first-child { background: #243356; border-radius: 12px 0 0 12px; }
+  .stat-card:nth-child(2) { background: var(--orange); border-radius: 0; }
+  .stat-card:last-child { background: #2d1b6b; border-radius: 0 12px 12px 0; }
+  .stat-num { font-size: clamp(44px, 5vw, 64px); font-weight: 900; color: var(--white); line-height: 1; }
+  .stat-label { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.85); margin-top: 10px; }
+  .stat-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; line-height: 1.5; }
+
+  /* ── BRANDS ── */
+  .brands { background: var(--white); }
+  .brands-inner { max-width: 1200px; margin: 0 auto; }
+  .brands-header { text-align: center; margin-bottom: 40px; }
+  .brands-header .section-title { font-size: 32px; }
+  .brands-header p { color: var(--mid); font-size: 15px; margin-top: 10px; }
+  .brands-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px 40px; align-items: center; }
+  .brands-grid img { height: 36px; object-fit: contain; filter: grayscale(20%); transition: filter 0.2s, transform 0.2s; }
+  .brands-grid img:hover { filter: grayscale(0%); transform: scale(1.05); }
+  .brands-cats { display: flex; justify-content: center; gap: 24px; margin-top: 32px; flex-wrap: wrap; }
+  .brands-cats span { font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--mid); cursor: pointer; padding: 6px 0; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .brands-cats span.active, .brands-cats span:hover { color: var(--orange); border-color: var(--orange); }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--white);
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .cta-banner-inner {
+    position: relative;
+    width: 90%;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    background: url('images/cta-bg.png') center center / cover no-repeat;
+  }
+  .cta-banner-inner::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(30,15,70,0.90) 45%, rgba(30,15,70,0.05) 100%);
+  }
+  .cta-text { position: relative; z-index: 2; max-width: 440px; padding: 56px 48px; }
+  .cta-banner h2 { font-size: clamp(28px, 3vw, 42px); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+  .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+  .cta-banner a {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 2px solid var(--white); color: var(--white);
+    padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .cta-banner a:hover { background: var(--white); color: #2d1b6b; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--white); padding: 0 64px 28px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-nav-bar { display: flex; gap: 8px; align-items: center; padding-bottom: 28px; margin-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .footer-nav-bar a { font-size: 14px; font-weight: 600; color: var(--dark); text-decoration: none; padding: 0 12px; transition: color 0.2s; }
+  .footer-nav-bar a:first-child { padding-left: 0; }
+  .footer-nav-bar a:hover { color: var(--orange); }
+  .footer-nav-bar span { color: var(--border); font-size: 18px; }
+  .footer-top { display: grid; grid-template-columns: 1fr 1fr 1.8fr; gap: 40px; margin-bottom: 32px; align-items: start; }
+  .footer-logo img { height: 32px; margin-bottom: 14px; }
+  .footer-logo .contact-label { font-size: 11px; font-weight: 700; color: var(--mid); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .footer-logo .contact-info { font-size: 13px; color: var(--mid); line-height: 1.7; }
+  .footer-addr h5 { font-size: 12px; font-weight: 700; color: var(--dark); letter-spacing: 0.5px; margin-bottom: 10px; }
+  .footer-addr p { font-size: 13px; color: var(--mid); line-height: 1.7; }
+  .footer-col h5 { font-size: 12px; font-weight: 700; color: var(--dark); letter-spacing: 0.5px; margin-bottom: 14px; }
+  .footer-col a { display: block; font-size: 13px; color: var(--mid); text-decoration: none; margin-bottom: 9px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--dark); }
+  .footer-map-col img { width: 100%; max-width: 280px; }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 12px; color: var(--mid); }
+  .footer-bottom a { font-size: 12px; color: var(--mid); text-decoration: none; margin-left: 20px; }
+  .footer-bottom a:hover { color: var(--dark); }
+  .linkedin-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 6px; background: #0077B5; margin-top: 14px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    nav .nav-links { display: none; }
+    section { padding: 60px 24px; }
+    .hero { padding-left: 24px; padding-bottom: 60px; }
+    .value-props-inner { grid-template-columns: 1fr; gap: 40px; }
+    .capabilities-grid { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: 1fr; gap: 4px; }
+    .stat-card:first-child, .stat-card:last-child, .stat-card:nth-child(2) { border-radius: 0; }
+    .stat-card:first-child { border-radius: 12px 12px 0 0; }
+    .stat-card:last-child { border-radius: 0 0 12px 12px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .cta-banner { padding: 64px 24px; }
+    .stats { padding: 56px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><img src="images/logo_1.png" alt="YSG"></div>
+  <div class="nav-links">
+    <a href="#">About Us</a>
+    <a href="#">Our Services</a>
+    <a href="#">Success Stories</a>
+    <a href="#" class="nav-cta">Contact Us →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-bg"></div>
+  <div class="hero-content" style="padding: 0 0 80px 64px;">
+    <h1>One Partner.<br>Every Channel.</h1>
+    <p>Asia's Most Trusted Ally in E-commerce Growth.</p>
+   
+  </div>
+</section>
+
+<!-- VALUE PROPS -->
+<section class="value-props">
+  <div class="value-props-inner">
+    <div class="value-left">
+      <div class="section-label">Who We Are</div>
+      <h2 class="section-title"><span>Digital Commerce</span> and<br>Omnichannel Solutions</h2>
+      <p class="section-sub">We support businesses in Asia's Digital Commerce space, delivering integrated warehousing, logistics, online retail, marketing and creative solutions under one roof, so brands scale faster with one trusted strategic ally, not many.</p>
+      <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:28px; margin-bottom:28px;">
+        <img src="images/ysg-shopee-premium-2025.webp" alt="Shopee Premium" style="height:78px; object-fit:contain;">
+        <img src="images/ysg-award-lazada-partner-2024.webp" alt="Lazada Partner" style="height:78px; object-fit:contain;">
+        <img src="images/ysg-lazmall-2023.webp" alt="LazMall 2023" style="height:78px; object-fit:contain;">
+        <img src="images/ysg-national-business-award-2023.webp" alt="National Business Award" style="height:78px; object-fit:contain;">
+      </div>
+      <a href="#" class="hero-cta">Explore YSG →</a>
+    </div>
+    <div class="value-right">
+      <div class="value-card">
+        <img src="images/ysg-one-ecosystem-icon.svg" alt="One Ecosystem">
+        <h4>One Ecosystem</h4>
+        <p>Connecting end-to-end operations, fulfilment, and ecommerce channels through one integrated workflow.</p>
+      </div>
+      <div class="value-card">
+        <img src="images/ysg-regional-infrastructure-icon.svg" alt="Regional Infrastructure">
+        <h4>Regional Infrastructure</h4>
+        <p>Leveraging YCH Group's pan-Asian network and fulfilment nodes across 8 countries and growing.</p>
+      </div>
+      <div class="value-card">
+        <img src="images/ysg-marketplace-expertise-icon.svg" alt="Marketplace Expertise">
+        <h4>Marketplace Expertise</h4>
+        <p>Operating across all scales, Lazada, TikTok Shop, Shopee and all major commercial channels.</p>
+      </div>
+      <div class="value-card">
+        <img src="images/ysg-end-to-end-execution-icon.svg" alt="End-to-End Execution">
+        <h4>End-to-End Execution</h4>
+        <p>From strategy to operations, creative, and technology to fulfilment — closing every gap on the journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-logos-box">
+    <p style="text-align:center; font-size:23px; font-weight:800; color:var(--dark); margin-bottom:28px;">Powering growth for partners across operations and e-commerce</p>
+    <div class="marquee-track">
+      <img src="images/ysg-lazada-partner.webp" alt="Lazada">
+      <img src="images/ysg-ezbuy-partner.webp" alt="ezbuy">
+      <img src="images/ysg-amazon-partner.webp" alt="Amazon">
+      <img src="images/ysg-enterprise-singapore-partner.webp" alt="Enterprise Singapore">
+      <!-- duplicated for seamless loop -->
+      <img src="images/ysg-lazada-partner.webp" alt="Lazada">
+      <img src="images/ysg-ezbuy-partner.webp" alt="ezbuy">
+      <img src="images/ysg-amazon-partner.webp" alt="Amazon">
+      <img src="images/ysg-enterprise-singapore-partner.webp" alt="Enterprise Singapore">
+    </div>
+  </div>
+</div>
+
+<!-- CAPABILITIES -->
+<section class="capabilities">
+  <div class="capabilities-inner">
+    <div class="capabilities-header">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">One Ecosystem.<br><span>Four Capabilities.</span></h2>
+      <p class="section-sub">We simplify the "chaos" by providing all the critical digital commerce solutions under one roof, so brands don't have to juggle vendors and there is no gap in execution.</p>
+    </div>
+    <div class="capabilities-grid">
+      <div class="cap-card">
+        <img src="images/ysg-marketing-desktop.webp" alt="Marketing">
+        <div class="cap-info">
+          <h3>Marketing</h3>
+          <p>It takes a competitive landscape, organic traffic and a lot to get brands noticed. Content that converts, campaigns that scale.</p>
+        </div>
+      </div>
+      <div class="cap-card">
+        <img src="images/ysg-enablerment-desktop.webp" alt="Enablement">
+        <div class="cap-info">
+          <h3>Enablement</h3>
+          <p>A strong back-end that drives growth in a competitive landscape. YSG's enablement specialists power Shopee, Lazada and TikTok like no one else.</p>
+        </div>
+      </div>
+      <div class="cap-card">
+        <img src="images/ysg-warehouse-desktop.webp" alt="Warehouse & Fulfilment">
+        <div class="cap-info">
+          <h3>Warehouse & Fulfilment</h3>
+          <p>Supported by YCH Group's regional infrastructure, YSG leverages best-in-class system integration across inventory, shipping, and more.</p>
+        </div>
+      </div>
+      <div class="cap-card">
+        <img src="images/ysg-creative-desktop.webp" alt="Creative">
+        <div class="cap-info">
+          <h3>Creative</h3>
+          <p>It's impossible to win in the noise. Our in-house creative team produces visuals and copy crafted in close alignment with each brand's identity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-card">
+      <div class="stat-num">500M+</div>
+      <div class="stat-label">Revenue Generated Annually</div>
+      <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">99%</div>
+      <div class="stat-label">Brands Served</div>
+      <div class="stat-desc">Supporting brands across all marketplace operations and integrations with high satisfaction.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">100K+</div>
+      <div class="stat-label">Orders Completed</div>
+      <div class="stat-desc">Reliable fulfilment at scale for brands operating in a connected ecosystem.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BRANDS -->
+<section class="brands">
+  <div class="brands-inner">
+    <div class="brands-header">
+      <h2 class="section-title">Brands We <span>Support</span></h2>
+      <p>Supporting brands across operations, marketplaces and digital commerce ecosystems.</p>
+    </div>
+    <div class="brands-grid">
+      <img src="images/ysg-brand-aClouet.webp" alt="Ayam Brand">
+      <img src="images/ysg-brand-cosmoderm.webp" alt="Cosmoderm">
+      <img src="images/ysg-brand-foreo.webp" alt="Foreo">
+      <img src="images/ysg-brand-goldheart.webp" alt="Goldheart">
+      <img src="images/ysg-brand-guess.webp" alt="Guess">
+      <img src="images/ysg-brand-hansgrohe.webp" alt="Hansgrohe">
+      <img src="images/ysg-brand-illiyoon.webp" alt="Illiyoon">
+      <img src="images/ysg-brand-laneige.webp" alt="Laneige">
+      <img src="images/ysg-brand-lee-hwa.webp" alt="Lee Hwa">
+      <img src="images/ysg-brand-innisfree.webp" alt="Innisfree">
+      <img src="images/ysg-brand-lkk.webp" alt="Lee Kum Kee">
+      <img src="images/ysg-brand-mise-en-scene.webp" alt="Mise en Scene">
+      <img src="images/ysg-brand-murad.webp" alt="Murad">
+      <img src="images/ysg-brand-miele.webp" alt="Miele">
+      <img src="images/ysg-brand-pandora.webp" alt="Pandora">
+      <img src="images/ysg-brand-ryo.webp" alt="RYO">
+      <img src="images/ysg-brand-puma.webp" alt="Puma">
+      <img src="images/ysg-brand-sulwhasoo.webp" alt="Sulwhasoo">
+      <img src="images/ysg-brand-tomson-health.webp" alt="Thomson">
+      <img src="images/ysg-brand-toto.webp" alt="TOTO">
+      <img src="images/ysg-brand-W-atelier.webp" alt="W Atelier">
+    </div>
+    <div class="brands-cats">
+      <span class="active">Beauty</span>
+      <span>Food &amp; Beverage</span>
+      <span>Fashion</span>
+      <span>Home &amp; Living</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <div class="cta-text">
+      <h2>Ready to Grow<br>Your Business?</h2>
+      <p>Let's explore how YSG can support your operations and e-commerce growth.</p>
+      <a href="#">Contact Us →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="height:3px; background:var(--orange); max-width:1200px; margin: 0 auto 32px auto;"></div>
+  <div class="footer-inner">
+    <div class="footer-nav-bar">
+      <a href="#">Enablement</a><span>|</span>
+      <a href="#">Marketing</a><span>|</span>
+      <a href="#">Creative</a><span>|</span>
+      <a href="#">Warehouse &amp; Fulfilment</a>
+    </div>
+    <div class="footer-top">
+      <div class="footer-logo">
+        <div class="contact-label">Contact us</div>
+        <div class="contact-info">hello@ysg.asia<br>+65 XXXX XXXX</div>
+        <a href="#" class="linkedin-logo" aria-label="LinkedIn">
+          <img src="images/linkedin.png" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="footer-addr">
+        <h5>Supply Chain City</h5>
+        <p>8 Bulim Avenue, #08-06,<br>Singapore 648166</p>
+      </div>
+      <div class="footer-map-col">
+        <img src="images/sea-map.png" alt="Southeast Asia coverage map">
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <a href="#">Privacy Policy</a><span> | </span><a href="#">Terms of Use</a>
+      </div>
+      <p>© 2026 Y-SG Pte Ltd. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
