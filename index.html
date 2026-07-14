@@ -185,7 +185,6 @@
   .stat-card.purple { background: var(--navy); }
   .stat-img { border-radius: 12px; overflow: hidden; }
   .stat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  /* Numbers: orange on dark cards, white on orange card */
   .stat-card.dark .stat-num   { color: var(--orange); }
   .stat-card.purple .stat-num { color: var(--orange); }
   .stat-card.orange .stat-num { color: var(--white); }
@@ -339,7 +338,6 @@
     .value-props-inner { grid-template-columns: 1fr; gap: 40px; }
     .capabilities-grid { grid-template-columns: 1fr; }
 
-    /* Stats bento - flex column so order works */
     .stats { padding: 40px 16px; }
     .stats-inner {
       display: flex;
@@ -350,84 +348,69 @@
     .stat-card.orange,
     .stat-card.dark,
     .stat-card.purple { grid-column: auto !important; grid-row: auto !important; }
-    .stats-inner > :nth-child(1) { order: 1; } /* office */
-    .stats-inner > :nth-child(4) { order: 2; } /* 500M dark */
-    .stats-inner > :nth-child(2) { order: 3; } /* 99% orange */
-    .stats-inner > :nth-child(3) { order: 4; } /* 100K purple */
-    .stats-inner > :nth-child(5) { order: 5; } /* warehouse */
+    .stats-inner > :nth-child(1) { order: 1; }
+    .stats-inner > :nth-child(4) { order: 2; }
+    .stats-inner > :nth-child(2) { order: 3; }
+    .stats-inner > :nth-child(3) { order: 4; }
+    .stats-inner > :nth-child(5) { order: 5; }
     .stat-img { min-height: 220px; }
     .stat-card.orange { min-height: 280px; }
 
-    /* Footer */
     .footer-top { grid-template-columns: 1fr; gap: 24px; }
     footer { padding: 0 24px 28px; }
     .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
     .footer-bottom a { margin-left: 0; }
     .footer-bottom-left span { display: none; }
 
-    /* Marquee */
     .marquee-bar { padding: 32px 24px; }
     .marquee-logos-box { max-width: 100%; padding: 24px 20px 16px; }
 
-    /* CTA */
     .cta-banner { padding: 0 0 40px 0; }
     .cta-banner-inner { width: 100%; border-radius: 0; min-height: 300px; }
     .cta-text { padding: 40px 28px; max-width: 100%; }
     .cta-banner-inner::before { background: linear-gradient(to bottom, rgba(30,15,70,0.88) 60%, rgba(30,15,70,0.5) 100%); }
 
-    /* WA */
     .wa-float { bottom: 20px; right: 20px; }
     .wa-btn { width: 52px; height: 52px; }
     .wa-btn::before { width: 52px; height: 52px; }
 
-    /* Footer nav */
     .footer-nav-bar { gap: 4px; }
     .footer-nav-bar a { font-size: 13px; padding: 0 8px; }
   }
 
   /* ── RESPONSIVE 480px ── */
   @media (max-width: 480px) {
-    /* Hero */
     .hero-content h1 { font-size: 30px; }
     .hero-content p { font-size: 14px; }
     .hero-content { padding: 0 0 60px 20px !important; }
 
-    /* Marquee */
     .marquee-logos-box p { font-size: 15px !important; }
     .marquee-track img { height: 32px; }
 
-    /* Value props */
     .value-card { flex-direction: column; }
     .value-card img { width: 40px; height: 40px; }
 
-    /* Capabilities */
     .cap-card img { height: 180px; }
     .cap-card .cap-info h3 { font-size: 16px; }
 
-    /* Stats */
     .stat-num { font-size: 44px; }
     .stat-card { padding: 24px 20px; }
 
-    /* Brands */
     .brands-grid { gap: 20px 28px; }
     .brands-grid img { height: 24px; }
     .brands-cats { gap: 8px; }
     .brands-cats span { font-size: 11px; }
 
-    /* CTA */
     .cta-text { padding: 28px 20px; }
     .cta-banner h2 { font-size: 24px; }
     .cta-banner p { font-size: 13px; }
 
-    /* Footer nav */
     .footer-nav-bar span { display: none; }
     .footer-nav-bar a { padding: 0 5px; font-size: 11px; }
 
-    /* Footer bottom */
     .footer-bottom p { font-size: 11px; }
     .footer-bottom a { font-size: 11px; }
 
-    /* WA */
     .wa-float { bottom: 16px; right: 16px; }
     .wa-btn { width: 48px; height: 48px; }
     .wa-btn svg { width: 26px; height: 26px; }
@@ -553,31 +536,31 @@
     </div>
     <div class="capabilities-grid">
       <div class="cap-card">
-        <img src="images/ysg-marketing-desktop.webp" alt="Marketing">
-        <div class="cap-info">
-          <h3>Marketing</h3>
-          <p>It takes a competitive landscape, organic traffic and a lot to get brands noticed. Content that converts, campaigns that scale.</p>
-        </div>
-      </div>
-      <div class="cap-card">
         <img src="images/ysg-enablerment-desktop.webp" alt="Enablement">
         <div class="cap-info">
           <h3>Enablement</h3>
-          <p>A strong back-end that drives growth in a competitive landscape. YSG's enablement specialists power Shopee, Lazada and TikTok like no one else.</p>
+          <p>Sustainable growth starts with a strong operational backbone. YSG manages end-to-end marketplace operations across Shopee, Lazada and TikTok Shop to ensure every storefront runs efficiently and remains optimised for sales performance.</p>
         </div>
       </div>
       <div class="cap-card">
-        <img src="images/ysg-warehouse-desktop.webp" alt="Warehouse & Fulfilment">
+        <img src="images/ysg-marketing-desktop.webp" alt="Marketing">
         <div class="cap-info">
-          <h3>Warehouse & Fulfilment</h3>
-          <p>Supported by YCH Group's regional infrastructure, YSG leverages best-in-class system integration across inventory, shipping, and more.</p>
+          <h3>Marketing</h3>
+          <p>In today's competitive landscape, organic traffic alone is no longer enough. Brands need sharp, targeted marketing strategies to scale their online to stay ahead. With our in-house marketing team, we develop data-driven strategies that reach the right consumers at the right moment, ensuring every dollar delivers ROI.</p>
         </div>
       </div>
       <div class="cap-card">
         <img src="images/ysg-creative-desktop.webp" alt="Creative">
         <div class="cap-info">
           <h3>Creative</h3>
-          <p>It's impossible to win in the noise. Our in-house creative team produces visuals and copy crafted in close alignment with each brand's identity.</p>
+          <p>Every customer interaction shapes a buying decision. Our in-house creative team develops impactful brand and commerce assets that elevate visibility, strengthen brand consistency, and maximize conversion across every channel.</p>
+        </div>
+      </div>
+      <div class="cap-card">
+        <img src="images/ysg-warehouse-desktop.webp" alt="Warehouse & Fulfilment">
+        <div class="cap-info">
+          <h3>Warehouse & Fulfilment</h3>
+          <p>YCH's B2C Warehouse Fulfilment solution provides end-to-end inventory management, order processing, packing, shipping, and returns services, enabling brands to deliver fast, accurate, and seamless customer experiences across every sales channel.</p>
         </div>
       </div>
     </div>
@@ -587,11 +570,9 @@
 <!-- STATS -->
 <div class="stats">
   <div class="stats-inner">
-    <!-- Top-left: office photo -->
     <div class="stat-img" style="grid-column:1; grid-row:1;">
       <img src="images/office.png" alt="YSG Office">
     </div>
-    <!-- Middle: tall orange card spanning both rows -->
     <div class="stat-card orange" style="grid-column:2; grid-row:1/3;">
       <div class="stat-num">99%</div>
       <div>
@@ -599,19 +580,16 @@
         <div class="stat-desc">Supporting brands of all sizes with integrated solutions that drive growth.</div>
       </div>
     </div>
-    <!-- Top-right: purple stat -->
     <div class="stat-card purple" style="grid-column:3; grid-row:1;">
       <div class="stat-num">100K+</div>
       <div class="stat-label">Orders Completed</div>
       <div class="stat-desc">Historical Orders Completed Successfully in a Year.</div>
     </div>
-    <!-- Bottom-left: dark stat -->
     <div class="stat-card dark" style="grid-column:1; grid-row:2;">
       <div class="stat-num">500M+</div>
       <div class="stat-label">Revenue Generated Annually</div>
       <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
     </div>
-    <!-- Bottom-right: warehouse photo -->
     <div class="stat-img" style="grid-column:3; grid-row:2;">
       <img src="images/warehouse.png" alt="YSG Warehouse">
     </div>
@@ -710,7 +688,6 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-bottom-left">
-        <!-- <a href="https://ysg.asia/privacypolicy" target="_blank" rel="noopener">Privacy Policy</a><span style="margin: 0 16px; color:var(--border);">|</span><a href="https://ysg.asia/termsofuse" target="_blank" rel="noopener">Terms of Use</a><span style="margin: 0 16px; color:var(--border);">|</span><a href="mailto:DPO@ysg.asia">For all PDPA matters contact here</a> -->
         <a href="https://ysg.asia/privacypolicy" target="_blank" rel="noopener">Privacy Policy</a><span style="margin: 0 16px; color:var(--border);">|</span><a href="https://ysg.asia/termsofuse" target="_blank" rel="noopener">Terms of Use</a><span style="margin: 0 16px; color:var(--border);">|</span><a href="mailto:DPO@ysg.asia">For all PDPA matters contact here</a><span style="margin: 0 16px; color:var(--border);">|</span><a href="https://www.ych.com/" target="_blank" rel="noopener">YCH Group</a>
       </div>
       <p>© 2026 Y-SG Pte Ltd. All Rights Reserved.</p>
@@ -719,7 +696,6 @@
 </footer>
 
 <!-- FLOATING WHATSAPP BUTTON -->
-<!-- ⚠️ Replace +6587868620 below with the actual YSG WhatsApp number -->
 <div class="wa-float">
   <div class="wa-tooltip">Chat with us on WhatsApp</div>
   <a class="wa-btn"
@@ -734,14 +710,12 @@
 </div>
 
 <script>
-  // Hamburger toggle
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => {
     mobileNav.classList.toggle('open');
   });
 
-  // Brand category filter (visual only)
   document.querySelectorAll('.brands-cats span').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelector('.brands-cats span.active')?.classList.remove('active');
@@ -749,7 +723,6 @@
     });
   });
 
-  // Hero slideshow
   const slides = document.querySelectorAll('.hero-slide');
   let current = 0;
   let timer;
