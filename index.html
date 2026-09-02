@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,7 +160,7 @@
   .marquee-bar { background: var(--white); padding: 40px calc((100% - 1200px) / 2); overflow: hidden; }
   @media (max-width: 1328px) { .marquee-bar { padding: 40px 64px; } }
   .marquee-logos-box { background: var(--light); border-radius: 16px; padding: 32px 48px 24px; overflow: hidden; max-width: 1200px; margin: 0 auto; }
-  .marquee-track { display: flex; gap: 56px; animation: marquee 28s linear infinite; width: max-content; align-items: center; }
+  .marquee-track { display: flex; gap: 20px; animation: marquee 28s linear infinite; width: max-content; align-items: center; }
   .marquee-track img { height: 42px; object-fit: contain; filter: grayscale(30%); transition: filter 0.2s; }
   .marquee-track img:hover { filter: grayscale(0%); }
   @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -441,7 +442,7 @@
     <div class="logo"><img src="images/logo_1.png" alt="YSG"></div>
     <div class="nav-links">
       <a href="about.html">About Us</a>
-      <a href="#services">Our Services</a>
+      <a href="our-services.html">Our Services</a>
       <a href="#brands">Brands We Support</a>
       <a href="#contact" class="nav-cta">Contact Us →</a>
     </div>
@@ -454,7 +455,8 @@
 <!-- MOBILE NAV DRAWER -->
 <div class="mobile-nav" id="mobileNav">
   <a href="about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About Us</a>
-  <a href="#services" onclick="document.getElementById('mobileNav').classList.remove('open')">Our Services</a>
+  <!-- <a href="#services" onclick="document.getElementById('mobileNav').classList.remove('open')">Our Services</a> -->
+  <a href="our-services.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Our Services</a>
   <a href="#brands" onclick="document.getElementById('mobileNav').classList.remove('open')">Brands We Support</a>
   <a href="#contact" onclick="document.getElementById('mobileNav').classList.remove('open')">Contact Us →</a>
 </div>
@@ -601,7 +603,7 @@
     </div>
     <div class="stat-card purple" style="grid-column:3; grid-row:1;">
       <div class="stat-num">125K+</div>
-      <div class="stat-label">Mega Campaign Orders Completed</div>
+      <div class="stat-label">Mega Campaign Orders per year</div>
       <div class="stat-desc">Successfully processed and completed a high volume of orders with fast, reliable, and efficient performance.</div>
     </div>
     <div class="stat-card dark" style="grid-column:1; grid-row:2;">
