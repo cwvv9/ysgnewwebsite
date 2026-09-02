@@ -60,7 +60,7 @@
   .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); padding: 14px 28px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 0.3px; transition: background 0.2s; }
   .hero-cta:hover { background: #d96a10; }
 
-  .about-hero-img { width: 100%; margin: 0 0 80px; padding: 0; }
+  .about-hero-img { width: 100%; margin: 0 0 20px; padding: 0; }
   .about-hero-img img { width: 100%; height: 460px; object-fit: cover; border-radius: 0; display: block; }
 
   section { padding: 80px calc((100% - 1200px) / 2); }
@@ -71,11 +71,11 @@
   .section-wrap { max-width: 1200px; margin: 0 auto; }
   .section-title { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--navy); line-height: 1.2; text-align: center; }
   .section-title span { color: var(--orange); }
-  .section-sub { font-size: 15px; color: var(--mid); margin-top: 14px; line-height: 1.7; text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .section-sub { font-size: 15px; color: var(--mid); margin-top: 14px; line-height: 1.7; text-align: center; margin-left: auto; margin-right: auto; }
 
   .challenges { background: var(--white); text-align: center; }
   .challenges .contact-line { font-size: 13px; color: var(--mid); margin-bottom: 24px; }
-  .badges-row { display: flex; justify-content: center; align-items: center; gap: 28px; margin-top: 40px; flex-wrap: wrap; }
+  .badges-row { display: flex; justify-content: center; align-items: center; gap: 28px; margin-top: 20px; flex-wrap: wrap; }
   .badges-row img { height: 100px; object-fit: contain; }
 
   .regional { background: var(--white); }
@@ -84,7 +84,7 @@
 
   /* UPDATED: region-card now horizontal — image left, details right */
   .region-card { display: flex; flex-direction: row; align-items: stretch; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-  .region-card img { width: 120px; min-width: 120px; height: auto; object-fit: cover; display: block; }
+  .region-card img { width: 140px; min-width: 140px; height: auto; object-fit: cover; display: block; }
   .region-card .region-info { padding: 14px 16px; display: flex; flex-direction: column; justify-content: center; }
   .region-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
   .region-card p { font-size: 12.5px; color: var(--mid); line-height: 1.6; }
@@ -95,7 +95,7 @@
   .team { background: var(--light); }
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
   .team-card { display: flex; align-items: flex-start; gap: 16px; background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 20px; }
-  .team-card img { width: 110px; height: 140px; object-fit: cover; object-position: top; border-radius: 8px; display: block; flex-shrink: 0; }
+  .team-card img { width: 110px; height: 140px; object-fit: contain; object-position: top; border-radius: 8px; display: block; flex-shrink: 0; }
   .team-card .team-info { padding: 0; min-width: 0; }
   .team-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); }
   .team-card .team-role { font-size: 12px; color: var(--mid); font-weight: 500; margin: 3px 0 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
@@ -118,10 +118,10 @@
 
   .partners-about { background: var(--white); text-align: center; }
   .partners-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px 56px; margin-top: 40px; }
-  .partners-grid img { height: 56px; object-fit: contain; filter: grayscale(15%); }
+  .partners-grid img { height: 40px; object-fit: contain; filter: grayscale(15%); }
 
   .cta-banner { background: var(--white); padding: 0 0 60px 0; display: flex; justify-content: center; }
-  .cta-banner-inner { position: relative; width: 100%; max-width: 1200px; min-height: 260px; display: flex; align-items: center; background: url('images/cta-bg.png') center center / cover no-repeat; border-radius: 12px; overflow: hidden; }
+  .cta-banner-inner { position: relative; width: 100%; max-width: 1200px; min-height: 260px; display: flex; align-items: center; background: url('images/cta-bg.png') center center / cover no-repeat; border-radius: 0px; overflow: hidden; }
   .cta-banner-inner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(30,15,70,0.90) 45%, rgba(30,15,70,0.05) 100%); }
   .cta-text { position: relative; z-index: 2; max-width: 440px; padding: 56px 48px; }
   .cta-banner h2 { font-size: clamp(28px, 3vw, 42px); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
@@ -254,7 +254,7 @@
   @media (max-width: 600px) {
     .team-grid { grid-template-columns: 1fr; }
     .region-card { flex-direction: row; }
-    .region-card img { width: 90px; min-width: 90px; }
+    .region-card img { width: 140px; min-width: 140px; }
   }
 </style>
 </head>
@@ -266,6 +266,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About Us</a>
+      <a href="our-services.html">Our Services</a>
       <a href="#contact" class="nav-cta">Contact Us →</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
@@ -276,6 +277,7 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html">Home</a>
   <a href="about.html">About Us</a>
+  <a href="our-services.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Our Services</a>
   <a href="#contact">Contact Us →</a>
 </div>
 
@@ -314,7 +316,7 @@
 <section class="regional">
   <div class="section-wrap">
     <h2 class="section-title">Our <span>Regional</span> Presence</h2>
-    <p class="section-sub">Backed by YCH's regional ecosystem, YSG connects technology, commerce, fulfilment, and marketing capabilities to help brands scale across Asia-Pacific.</p>
+    <p class="section-sub">Backed by the YSG Network, we connect technology, commerce, fulfilment, and marketing capabilities to help brands scale across Asia-Pacific. Our regional network includes strategically located warehouses that enable efficient storage, fulfilment, and distribution across key markets.</p>
 
     <div class="regional-grid">
       <div class="regional-col">
@@ -371,71 +373,73 @@
     </div>
   </div>
 </section>
-
-<!-- TEAM SECTION HIDDEN: re-enable once designer finishes team photos. Just remove this comment wrapper.
 <section class="team">
   <div class="section-wrap">
     <h2 class="section-title">Meet our <span>Expert</span> Team</h2>
     <p class="section-sub">The people behind our integrated ecosystem, bringing expertise and execution to every brand journey.</p>
-
     <div class="team-grid">
       <div class="team-card">
-        <img src="images/team-member-sample.png" alt="Ian Chua">
-        <div class="team-info"><h4>Ian Chua</h4><p class="team-role">Head, Digital Commerce BU</p><p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p></div>
+        <img src="images/Ian-profile.webp" alt="Ian Chua">
+        <div class="team-info"><h4>Ian Chua</h4><p class="team-role">Head, Digital Commerce BU</p><p class="bio">Ian leads the YSG team with extensive experience across the food, retail, and supply chain sectors. His vision is to simplify supply chains through technology and innovation, enabling brands to grow while improving efficiency and operational excellence.</p></div>
       </div>
       <div class="team-card">
-        <img src="images/team-member-sample.png" alt="Mileen See Toh">
-        <div class="team-info"><h4>Mileen See Toh</h4><p class="team-role">Manager, E-Commerce Enablement</p><p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p></div>
+        <img src="images/Mileen-profile.webp" alt="Mileen See Toh">
+        <div class="team-info"><h4>Mileen See Toh</h4><p class="team-role">Reginal Lead, E-Commerce Enablement</p><p class="bio">Mileen leads regional e-commerce operations across Southeast Asia, specialising in marketplace management, commercial execution, and team leadership. With expertise in Shopee, Lazada, and TikTok Shop, she drives campaign performance, P&L growth, and operational excellence to help brands scale sustainably across markets.</p></div>
       </div>
       <div class="team-card">
-        <img src="images/team-member-sample.png" alt="Ray Wong">
-        <div class="team-info"><h4>Ray Wong</h4><p class="team-role">Manager, Business Development (Digital Commerce BU)</p><p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p></div>
+        <img src="images/Ray-profile.webp" alt="Ray Wong">
+        <div class="team-info"><h4>Ray Wong</h4><p class="team-role">Manager, Business Development (Digital Commerce BU)</p><p class="bio">Ray leads Commercial and Business Development at YSG, helping brands expand across Southeast Asia through e-commerce and supply chain solutions. With expertise in marketplaces, fulfilment, logistics, and distribution, he helps businesses enter new markets and scale efficiently.</p></div>
       </div>
       <div class="team-card">
-        <img src="images/team-member-sample.png" alt="Geumju Ko">
-        <div class="team-info"><h4>Geumju Ko</h4><p class="team-role">Assistant Manager, Business Development</p><p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p></div>
+        <img src="images/Danny-profile.webp" alt="Danny">
+        <div class="team-info"><h4>Danny</h4><p class="team-role">Deputy Regional Lead, E-Commerce Enablement</p><p class="bio">Danny drives e-commerce growth across Southeast Asia through marketplace expertise and integrated supply chain solutions. He helps brands build scalable omnichannel strategies, optimize marketplace performance, and streamline operations across platforms such as Shopee, Lazada, TikTok Shop, and Shopify.</p></div>
       </div>
       <div class="team-card">
-        <img src="images/team-member-sample.png" alt="Danny">
-        <div class="team-info"><h4>Danny</h4><p class="team-role">Role Title</p><p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p></div>
+        <img src="images/William-profile.webp" alt="William Oh">
+        <div class="team-info"><h4>William Oh</h4><p class="team-role">Assistant Manager, Account Management and Digital Marketing</p><p class="bio">William leads Digital Marketing and Accounts, driving digital strategies and managing key client relationships. He focuses on brand engagement, business growth, and delivering strong client outcomes through strategic marketing and innovative solutions.</p></div>
       </div>
       <div class="team-card">
-        <img src="images/team-member-sample.png" alt="William Oh">
-        <div class="team-info"><h4>William Oh</h4><p class="team-role">Assistant Manager, Account Management and Digital Marketing</p><p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p></div>
+        <img src="images/Alex-profile.webp" alt="Alex Tan">
+        <div class="team-info"><h4>Alex Tan</h4><p class="team-role">Lead, Strategic Products & Procurement</p><p class="bio">Alex leads Strategic Products & Procurement at YSG, bridging product management, IT, and vendor partnerships. With extensive IT and e-commerce expertise, he drives OMS and WMS migrations, system integration, and digital transformation across YSG’s commerce ecosystem.</p></div>
       </div>
       <div class="team-card">
-        <img src="images/team-member-sample.png" alt="Alex Tan">
-        <div class="team-info"><h4>Alex Tan</h4><p class="team-role">Lead, Strategic Products & Procurement</p><p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p></div>
+        <img src="images/GeumJu-profile.webp" alt="Geumju Ko">
+        <div class="team-info"><h4>Geumju Ko</h4><p class="team-role">Assistant Manager, Business Development</p><p class="bio">Geumju drives regional business development and client engagement across Southeast Asia and Korea. She develops tailored supply chain and e-commerce solutions, helping businesses enter new markets, expand regionally, and achieve sustainable growth.</p></div>
       </div>
       <div class="team-card">
-        <img src="images/team-member-sample.png" alt="Kim See">
-        <div class="team-info"><h4>Kim See</h4><p class="team-role">Lead, Digital Creative</p><p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p></div>
+        <img src="images/Kim-profile.webp" alt="Kim See">
+        <div class="team-info"><h4>Kim See</h4><p class="team-role">Lead, Digital Creative</p><p class="bio">Kim leads Digital Creative, delivering brand-consistent creative solutions across digital and e-commerce channels. She transforms business goals into engaging creative strategies, helping brands strengthen their digital presence, drive engagement, and support business growth.</p></div>
+      </div>
+      <div class="team-card">
+        <img src="images/Som-profile.webp" alt="Duangkhae">
+        <div class="team-info"><h4>Duangkhae</h4><p class="team-role">Thailand eCommerce Channel Manager and Business Development</p><p class="bio">Duangkhae oversees the e-commerce business in Thailand, shaping commercial strategies that drive sustainable growth and business performance. She builds strategic client partnerships and works across teams to unlock new opportunities, strengthen execution, and deliver growth with a focus on efficiency and profitability.</p></div>
+      </div>
+      <div class="team-card">
+        <img src="images/Trinh-profile.webp" alt="Trinh">
+        <div class="team-info"><h4>Trinh</h4><p class="team-role">Vietnam eCommerce Channel Manager and Business Development</p><p class="bio">Trinh is responsible for Vietnam Enablement, driving e-commerce growth and development across the market. She oversees key accounts, partnering with local and regional teams to drive commercial performance, operational excellence, and strategic alignment. She also identifies growth opportunities and supports cross-border expansion, acting as a key bridge between Vietnam and the regional organization.</p></div>
       </div>
     </div>
   </div>
 </section>
--->
-
-<!-- STATS: reused images/office.png and images/ysg-ych-partner.webp (both already exist) -->
 <section class="stats-about">
   <div class="section-wrap">
     <div class="stats-about-grid">
-      <div class="stat-img"><img src="images/office.png" alt="YSG office team"></div>
+      <div class="stat-img"><img src="images/company-profile-image.webp" alt="YSG office team"></div>
       <div class="stat-card-about orange">
-        <div class="stat-num">A Team of 50+</div>
+        <div class="stat-num">50+</div>
         <div class="stat-bottom">
-          <div class="stat-label">YSG Pte Ltd</div>
+          <div class="stat-label">Y-SG Pte Ltd</div>
           <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
         </div>
       </div>
       <div class="stat-card-about navy">
-        <div class="stat-num">A Team of 1000+</div>
+        <div class="stat-num">7 O2O Capabilities</div>
         <div class="stat-bottom">
-          <div class="stat-label">YCH Pte Ltd</div>
-          <div class="stat-desc">Where Supply Chain Connects</div>
+          <div class="stat-label">1 API</div>
+          <div class="stat-desc">Connect multiple function through one seamless API integration, simplifying your workflow and keeping your data connected, synchronized, and efficient.</div>
         </div>
       </div>
-      <div class="stat-signboard"><img src="images/ych-signboard.png" alt="YCH signboard"></div>
+      <div class="stat-signboard"><img src="images/about-us-office.png" alt=""></div>
     </div>
   </div>
 </section>
