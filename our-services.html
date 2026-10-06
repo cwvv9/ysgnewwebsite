@@ -110,18 +110,35 @@
   .tech-diagram-frame { max-width: 900px; margin: 56px auto 0; border: 1.5px dashed #F4A05F; border-radius: 14px; background: var(--light); padding: 28px; }
   .tech-diagram { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
   .tech-box { border-radius: 10px; padding: 18px 26px; text-align: left; }
-  .tech-box h5 { font-size: 14.5px; font-weight: 700; text-align: center; margin-bottom: 10px; }
-  .tech-box .desc { font-size: 11.5px; font-weight: 400; line-height: 1.7; text-align: center; }
-  .tech-box.marketplaces { background: var(--white); border: 1px solid var(--dark); }
+  .tech-box h5 { font-size: 16px; font-weight: 700; text-align: center; margin-bottom: 10px; }
+  .tech-box .desc { font-size: 14px; font-weight: 400; line-height: 1.7; text-align: center; }
+  .tech-box.marketplaces { background: var(--white); border: 1px dashed var(--orange); }
   .tech-box.marketplaces h5 { color: var(--navy); }
   .tech-box.marketplaces .desc { color: var(--mid); }
-  .tech-connector { width: 0; height: 26px; margin: 0 auto; border-left: 2px dotted var(--orange); position: relative; }
-  .tech-connector::after { content: ''; position: absolute; left: -4px; bottom: -1px; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid var(--orange); }
+  .tech-connector {
+    width: 2px; height: 26px; margin: 0 auto; position: relative;
+  }
+  .tech-connector::before {
+    content: ''; position: absolute;
+    top: 0; left: 0;
+    width: 2px; height: calc(100% - 6px);
+    background-image: linear-gradient(to bottom, var(--orange) 50%, transparent 50%);
+    background-size: 2px 4px;
+    background-repeat: repeat-y;
+  }
+  .tech-connector::after {
+    content: ''; position: absolute;
+    left: 50%; bottom: 0; transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid var(--orange);
+  }
   .tech-box.oms { background: var(--orange); }
   .tech-box.oms h5 { color: var(--white); }
   .tech-box.oms .desc { color: rgba(255,255,255,0.88); }
   .tech-box.oms .desc-list { list-style: none; text-align: left; margin: 0; padding: 0; columns: 2; column-gap: 22px; }
-  .tech-box.oms .desc-list li { position: relative; padding-left: 14px; font-size: 11.5px; line-height: 1.7; color: rgba(255,255,255,0.92); break-inside: avoid; }
+  .tech-box.oms .desc-list li { position: relative; padding-left: 14px; font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.92); break-inside: avoid; }
   .tech-box.oms .desc-list li::before { content: '•'; position: absolute; left: 0; color: rgba(255,255,255,0.85); }
   .wms-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .tech-box.wms { background: var(--white); border: 1px solid var(--dark); }
@@ -130,7 +147,7 @@
   .tech-box.api { background: var(--navy); max-width: 220px; margin: 0 auto; padding: 14px 20px; }
   .tech-box.api h5 { color: var(--white); margin-bottom: 0; }
   .client-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .tech-box.client { background: var(--white); color: var(--dark); border: 1px dashed var(--orange); font-size: 12.5px; }
+  .tech-box.client { background: var(--white); color: var(--dark); border: 1px dashed var(--orange); font-size: 14px; }
   .tech-box.client h5 { color: var(--navy); }
   .tech-box.client .desc { color: var(--mid); text-align: left; }
   @media (max-width: 700px) {
